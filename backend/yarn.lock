@@ -3784,6 +3784,14 @@ pretty-format@^28.0.0, pretty-format@^28.1.3:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
+prisma-api-query-builder@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/prisma-api-query-builder/-/prisma-api-query-builder-0.1.0.tgz#913b6e283a4b87f7727b732e843db02b47e4aa69"
+  integrity sha512-BikzS2ACVgE+8rrKNxKL8cdzHCkuK1+EK3KRBzsp/hVc5qGQgOEpl4HRZp2vA9oSZ6hTZHBWXucvFuy2t+kEYQ==
+  dependencies:
+    lodash "^4.17.21"
+    qs "^6.11.0"
+
 prisma@^4.8.0:
   version "4.8.0"
   resolved "https://registry.npmjs.org/prisma/-/prisma-4.8.0.tgz"
