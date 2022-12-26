@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { TodoModule } from './todo/todo.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @Module({
-  imports: [TodoModule],
+  imports: [ShoppingListModule],
   controllers: [],
   providers: [],
 })
