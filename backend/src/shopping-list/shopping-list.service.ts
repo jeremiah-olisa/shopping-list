@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateShoppingListDto } from './dto/create-shopping-list.dto';
-import { UpdateShoppingListDto } from './dto/update-shopping-list.dto';
+import { CreateShoppingListDto } from './dto/create.dto';
+import { UpdateShoppingListDto } from './dto/update.dto';
 
 @Injectable()
 export class ShoppingListService {

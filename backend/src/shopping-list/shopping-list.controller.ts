@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ShoppingListService } from './shopping-list.service';
-import { CreateShoppingListDto } from './dto/create-shopping-list.dto';
-import { UpdateShoppingListDto } from './dto/update-shopping-list.dto';
+import { CreateShoppingListDto } from './dto/create.dto';
+import { UpdateShoppingListDto } from './dto/update.dto';
 
 @Controller('shopping-list')
 export class ShoppingListController {
@@ -18,17 +18,17 @@ export class ShoppingListController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.shoppingListService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.shoppingListService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateShoppingListDto: UpdateShoppingListDto) {
-    return this.shoppingListService.update(+id, updateShoppingListDto);
+  update(@Param('id') id: number, @Body() updateShoppingListDto: UpdateShoppingListDto) {
+    return this.shoppingListService.update(id, updateShoppingListDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.shoppingListService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.shoppingListService.remove(id);
   }
 }
