@@ -39,7 +39,7 @@ const ShoppingListSeeder = async (prismaClient: Prisma.TransactionClient) => {
     });
 }
 
-const shoppingListSeeder = async (prismaClient: Prisma.TransactionClient, listCount: number = faker.datatype.number({ max: 15, min: 1 })) => {
+const shoppingListSeeder = async (prismaClient: Prisma.TransactionClient, listCount: number = faker.datatype.number({ max: 30, min: 1 })) => {
     const lists: ShoppingList[] = []
 
     for (let i = 0; i < listCount; i++) {
