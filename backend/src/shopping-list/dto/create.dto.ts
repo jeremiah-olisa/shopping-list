@@ -14,9 +14,6 @@ export class CreateShoppingListItemDto implements Omit<ShoppingListItem, 'id' | 
     @IsNotEmpty() @IsNumber() @IsPositive() @ApiProperty({ description: 'Price of the item(Milo)' })
     price: number;
 
-    @IsNotEmpty() @IsNumber() @IsPositive() @ApiProperty({ description: 'Total price of Item purchased => totalPrice = price * quantity' })
-    totalPrice: number;
-
     @IsNotEmpty() @IsNumber() @IsPositive() @ApiProperty({ description: 'The Shopping List it Belongs to' })
     shoppingListId: number;
 
@@ -28,9 +25,6 @@ export class CreateShoppingListNestedItemDto extends OmitType(CreateShoppingList
 export class CreateShoppingListDto implements Omit<ShoppingList, 'id' | 'createdAt' | 'updatedAt'> {
     @IsNotEmpty() @MaxLength(20) @MinLength(2) @IsString() @ApiProperty({ description: 'List name e.g Jan 1 Shopping List' })
     name: string;
-
-    @IsNotEmpty() @IsNumber() @IsPositive() @ApiProperty({ description: 'Total Price of items in the list' })
-    totalPrice: number;
 
     @IsNotEmpty() @ValidateNested() @ApiProperty({ type: [CreateShoppingListNestedItemDto], description: 'Shopping List Item' }) @Type(() => CreateShoppingListNestedItemDto)
     items: CreateShoppingListNestedItemDto[]
