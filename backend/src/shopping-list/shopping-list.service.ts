@@ -6,7 +6,6 @@ import ApiQueryBuilder from 'prisma-api-query-builder/dist/query-builder';
 import { IQueryFields } from 'prisma-api-query-builder/types';
 import { Prisma } from '@prisma/client';
 import { ShoppingListEntity } from './entities/shopping-list.entity';
-import { defaultPrismaStringFilter } from 'prisma-api-query-builder/dist/query-builder.constant';
 
 @Injectable()
 export class ShoppingListService {
@@ -26,14 +25,14 @@ export class ShoppingListService {
   }
 
   async findAll(query?: IQueryFields) {
-    return new ApiQueryBuilder<Prisma.ShoppingListWhereInput, ShoppingListEntity>(this.prisma.shoppingList, new ShoppingListEntity, defaultPrismaStringFilter, query)
+    return new ApiQueryBuilder<ShoppingListEntity>(this.prisma.shoppingList, new ShoppingListEntity, query)
       .all()
       .build()
       .many();
   }
 
   findOne(id: number, query?: IQueryFields) {
-    return new ApiQueryBuilder<Prisma.ShoppingListFindFirstArgs, ShoppingListEntity>(this.prisma.shoppingList, new ShoppingListEntity, defaultPrismaStringFilter, query)
+    return new ApiQueryBuilder<ShoppingListEntity, Prisma.ShoppingListFindFirstArgs>(this.prisma.shoppingList, new ShoppingListEntity, query)
       .select()
       .populate()
       .build()

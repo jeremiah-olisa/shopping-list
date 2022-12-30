@@ -6,7 +6,7 @@ export type Columns = TableColumns<ShoppingList>;
 
 export type RelationShips = TableRelationShips<Prisma.ShoppingListCreateInput, ShoppingList>;
 
-const allColumns: Columns[] = ['id', 'name', 'totalPrice', 'createdAt', 'updatedAt']
+const allColumns: Columns[] = ['id', 'name', 'createdAt', 'updatedAt']
 export class ShoppingListEntity implements IModelEntity<ShoppingList, Columns, RelationShips> {
     id: number;
     name: string;
@@ -17,11 +17,11 @@ export class ShoppingListEntity implements IModelEntity<ShoppingList, Columns, R
     filterableColumns: Columns[] = allColumns;
     selectableColumns: Columns[] = allColumns;
     filterableReltionship: RelationShips[] = ['items'];
-    filterableReltionshipColumns: TableColumns<ShoppingListItem>[] = ['name', 'price', 'totalPrice', 'checked', 'quantity'];
-    sortableColumns: Columns[] = ['createdAt', 'name', 'totalPrice'];
+    filterableReltionshipColumns: TableColumns<ShoppingListItem>[] = ['name', 'price', 'checked', 'quantity'];
+    sortableColumns: Columns[] = ['createdAt', 'name'];
     allowedRelationShips: RelationShips[] = ['items'];
     selectableRelationShips: { [x in RelationShips]: string[]; } = {
-        items: ['price', 'name', 'quantity', 'checked', 'totalPrice'] as TableColumns<ShoppingListItem>[]
+        items: ['price', 'name', 'quantity', 'checked'] as TableColumns<ShoppingListItem>[]
     };
 
 }

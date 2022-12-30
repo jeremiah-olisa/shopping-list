@@ -36,14 +36,14 @@ export class QueryFields implements IQueryFields {
   @ApiPropertyOptional({ description: 'The fields/columns you want to select' })
   select: string;
 
-  @IsString()
+  // @IsString()
   @IsOptional()
   @ApiPropertyOptional({
     description: 'Relationships to include in your results',
   })
   include: string;
 
-  @IsString()
+  // @IsString()
   @IsOptional()
   @ApiPropertyOptional({ description: 'Filter the results' })
   filter: string;
